@@ -1,0 +1,40 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: large;
+    background-color: #0A2647;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.card {
+    background-color: #144272;
+    color: #fff;
+}
+.card-title {
+    color: #fff;
+}
+.form-label {
+    color: #fff;
+}
+.form-control {
+    background-color: #E0E8F0; 
+    color: #000; 
+}
+.form-control:focus { 
+    background-color: #fff;
+    color: #000;
+}
+.btn-primary {
+    background-color: #2C74B3;
+    border-color: #2C74B3;
+}
+.btn-primary:hover {
+    background-color: #0A2647;
+    border-color: #0A2647;
+}
+
