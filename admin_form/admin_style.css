@@ -45,7 +45,8 @@ ul {
     position: fixed; 
     height: 100%; 
     top: 0; 
-    left: 0; 
+    left: 0;
+    z-index: 1; 
 }
 
 .liste{
@@ -78,6 +79,7 @@ ul {
 }
 
 /* Main Content Css*/
+
 .main-content {
     position: relative;
     color: #0A2647;
@@ -87,4 +89,21 @@ ul {
     height: 10px;
     border: 0;
     box-shadow: 0 10px 10px -10px #333 inset;
+}
+
+/* Footer Css */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.445) 0px 22px 70px 4px;
+}
+  
+.footer-ts { 
+    background-color: #2C74B3;
+
 }
