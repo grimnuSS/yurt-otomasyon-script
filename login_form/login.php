@@ -61,12 +61,23 @@ if (session_status() == PHP_SESSION_NONE) {
                     </div>
                     <?php
                         if (isset($_SESSION['mvs_yanlis'])) {
-                        echo '<div class="mt-3 text-center"><p class="fs-6">';
-                        echo $_SESSION['mvs_yanlis'];
-                        echo '</p></div>';
-
-                        unset($_SESSION['mvs_yanlis']);
+                            echo '<div class="mt-3 text-center"><p class="fs-6">';
+                            echo $_SESSION['mvs_yanlis'];
+                            echo '</p></div>';
+                            unset($_SESSION['mvs_yanlis']);
                         }
+                        
+                        if(isset($_POST['cikis_yap'])){
+                            if(empty($_SESSION['kul_eposta'])){
+                                echo '<div class="mt-3 text-center"><p class="fs-6">';
+                                echo $_SESSION['cikis_yapildi']; 
+                                echo '</p></div>';
+                                
+                                session_destroy();
+                                unset($_SESSION['cikis_yapildi']); 
+                            }
+                        }
+
                     ?>
                 </form>
             </div>

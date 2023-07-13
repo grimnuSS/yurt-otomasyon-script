@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
     overflow: hidden;
 }
 
@@ -12,6 +11,7 @@ body {
     box-sizing: border-box;
     font-family: 'Hind Siliguri', sans-serif;
     font-size: large;
+    background-color: #F8F8F8;
 }
 
 html {
@@ -22,6 +22,9 @@ ul {
     list-style-type: none;
 }
 
+textarea {
+    resize: none;
+ }
 
 /* Sidebar Css */
 
@@ -30,7 +33,7 @@ ul {
     width: 75%;
     max-width: 100%;
     margin: 0 0 10px 0;
-    }
+}
 
 .baslik{
     margin-bottom: -35px;
@@ -80,16 +83,59 @@ ul {
 
 /* Main Content Css*/
 
-.main-content {
-    position: relative;
+.kayit-kart{
+    font-style: bold;
+    background-color: #fff;
     color: #0A2647;
 }
 
-.shadow-hr{
-    height: 10px;
-    border: 0;
-    box-shadow: 0 10px 10px -10px #333 inset;
+.kayit-kart label{
+    font-style: oblique;
+    background-color: #fff;
+    color: #0A2647;
 }
+
+.kayit-kart label{
+    color: #0A2647;
+}
+
+.kayit-in{
+    text-align: center;
+    font-size: large;
+    padding: 4px 8px;
+    background-color: #fff;
+    border: 2px solid #0A2647;
+    color: #0A2647;
+    border-radius: 14px;
+}
+
+.kayit-in:hover {
+    border: 2px solid #2C74B3;
+    background-color: #fff;
+    color: #2C74B3;
+}
+
+.islemler{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tablo{
+    background-color: #0A2647;
+    color: #fff;
+    border: 2px solid #2C74B3;
+}
+
+.input-border{
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 2px solid #0A2647;
+}
+
+.input-border:focus{
+    border: 2px solid #2C74B3;
+}
+
+
 
 /* Footer Css */
 
@@ -106,4 +152,32 @@ ul {
 .footer-ts { 
     background-color: #2C74B3;
 
+}
+
+
+/*Mobil Responsive*/
+
+@media only screen and (max-width: 995px) {
+    *{
+        overflow: visible;
+    }
+    .sidebar-container {
+        visibility: hidden;
+        display: none;
+        width: 12rem; 
+        min-width: 180px; 
+        background-color: #0A2647; 
+        color: #fff;
+        position: fixed; 
+        height: 100%; 
+        top: 0; 
+        left: 0;
+        z-index: 1; 
+    }
+    
+    .kayit-kart{
+        font-style: oblique;
+        align-items: center;
+        position: relative;
+    }
 }

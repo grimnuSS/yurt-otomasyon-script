@@ -21,7 +21,17 @@ if (isset($_POST['oturum_ac'])) {
         exit;
     }else{
         $_SESSION['kul_eposta'] = $_POST['kul_eposta'];
-        header("location:../admin_form/admin.php");
+        header("location:../admin_form/ogrenci_genel.php");
     }
 }
+
+if(isset($_POST['cikis_yap'])){
+    if(isset($_SESSION['kul_eposta'])){
+        session_destroy();
+        unset($_SESSION['kul_eposta']);
+        $_SESSION['cikis_yapildi'] = "Oturum Kapatıldı. Yeniden Giriş Yapmanız Gerek.";
+        header("location:../login_form/login.php");
+    }
+}
+
 ?>

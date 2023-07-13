@@ -10,14 +10,14 @@
                     <ul>
                         <li class="mt-1"><h6 class="main-list text-light">Öğrenci İşlemleri</h6></li><hr class="main-list-hr">
                         <ul class="alt-liste">
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Genel Profil</li></a>
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- İşlemler</li></a>
+                            <li><a href="ogrenci_genel.php" class="link-offset-2 link-underline link-underline-opacity-0">- Genel Profil</a></li>
+                            <li><a href="ogrenci_islemler.php" class="link-offset-2 link-underline link-underline-opacity-0">- İşlemler</a></li>
                         </ul>
                         <li class="mt-4"><h6 class="main-list text-light">Ödeme İşlemleri</h6></li><hr class="main-list-hr">
                         <ul class="alt-liste">
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Genel İşlemler</a></li>
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Yerleri</a></li>
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Durumları</a></li>
+                            <li><a href="odeme_genel.php" class="link-offset-2 link-underline link-underline-opacity-0">- Genel İşlemler</a></li>
+                            <li><a href="odeme_yerleri.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Yerleri</a></li>
+                            <li><a href="odeme_durumlari.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Durumları</a></li>
                         </ul>
                         <li class="mt-4"><h6 class="main-list text-light">Kasa Raporları</h6></li><hr class="main-list-hr">
                         <ul class="alt-liste">
@@ -40,9 +40,11 @@
                     </ul>
                 </div>
                 <div class="log-out-div">
-                    <button class="btn text-light log-out">
-                        Çıkış Yap
-                    </button>
+                    <form action="../login_form/login_islem.php" method="post">
+                        <button name="cikis_yap" type="submit" class="btn text-light log-out">
+                            Çıkış Yap
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

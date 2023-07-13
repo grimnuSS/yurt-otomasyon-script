@@ -20,7 +20,7 @@ if(empty($_SESSION['kul_eposta'])){
     <!--Sidebar Bitiş-->  
 
     <!-- Ana İçerik -->
-    <div class="col-md-9">
+    <div class="col-md-8 mx-auto">
         <div class="main-content">
             <h2 class="mt-3 text-left">Öğrenci İşlemleri</h2>
             <hr class="shadow-hr">
