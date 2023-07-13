@@ -30,30 +30,43 @@ if(empty($_SESSION['kul_eposta'])){
                 </div>
                 <div class="card-body tablo-head">
                     <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Giriş-Çıkış Türü</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Giriş</td>
-                                    <td>Kasa</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Çıkış</td>
-                                    <td>Banka</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Giriş</td>
-                                    <td>Banka</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Firma Adı</th>
+                                <th scope="col">Miktar</th>
+                                <th scope="col">Başlangıç/Bitiş</th>
+                                <th scope="col">Ödenen</th>
+                                <th scope="col">Kalan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Murat Bilgisayar</td>
+                                <td>10000 TL</td>
+                                <td>12.02.2022/12.02.2023</td>
+                                <td>5000 TL</td>
+                                <td>5000 TL</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Ali Manav</td>
+                                <td>20000 TL</td>
+                                <td>15.04.2021/11.02.2025</td>
+                                <td>5000 TL</td>
+                                <td>15000 TL</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Zeynep Ticaret</td>
+                                <td>50000 TL</td>
+                                <td>24.02.2021/24.04.2024</td>
+                                <td>5000 TL</td>
+                                <td>45000 TL</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -61,31 +74,44 @@ if(empty($_SESSION['kul_eposta'])){
         <div class="col-6 ">
             <div class="card islemler">
                 <div class="card-header kayit-kart">
-                    <h3 class="mt-3">Gelir Raporlar</h3>
+                    <h3 class="mt-3">Gider Raporlar</h3>
                 </div>
                 <div class="card-body tablo-head">
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Giriş-Çıkış Türü</th>
+                                <th scope="col">Firma Adı</th>
+                                <th scope="col">Miktar</th>
+                                <th scope="col">Başlangıç/Bitiş</th>
+                                <th scope="col">Ödenen</th>
+                                <th scope="col">Kalan</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Giriş</td>
-                                <td>Kasa</td>
+                                <td>Murat Bilgisayar</td>
+                                <td>10000 TL</td>
+                                <td>12.02.2022/12.02.2023</td>
+                                <td>5000 TL</td>
+                                <td>5000 TL</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Çıkış</td>
-                                <td>Banka</td>
+                                <td>Ali Manav</td>
+                                <td>20000 TL</td>
+                                <td>15.04.2021/11.02.2025</td>
+                                <td>5000 TL</td>
+                                <td>15000 TL</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>Giriş</td>
-                                <td>Banka</td>
+                                <td>Zeynep Ticaret</td>
+                                <td>50000 TL</td>
+                                <td>24.02.2021/24.04.2024</td>
+                                <td>5000 TL</td>
+                                <td>45000 TL</td>
                             </tr>
                         </tbody>
                     </table>
@@ -98,88 +124,49 @@ if(empty($_SESSION['kul_eposta'])){
     <!--Ödeme Liste Başlangıç-->
     <div class="container-fluid mt-5 mb-5">
         <div class="card islemler">
-            <div class="card-header kayit-kart">
-                <h3 class="mt-3">Ödeme Bilgileri Listesi</h3>
-                <hr>
-                <div class="card-bodytablo-head">
-                <table id="" class="display" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Salary</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>$433,060</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                            <td>Software Engineer</td>
-                            <td>Edinburgh</td>
-                            <td>23</td>
-                            <td>$103,600</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                            <td>Support Lead</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>$342,000</td>
-                        </tr>
-                        <tr>
-                            <td>Dai Rios</td>
-                            <td>Personnel Lead</td>
-                            <td>Edinburgh</td>
-                            <td>35</td>
-                            <td>$217,500</td>
-                        </tr>
-                        <tr>
-                            <td>Gavin Joyce</td>
-                            <td>Developer</td>
-                            <td>Edinburgh</td>
-                            <td>42</td>
-                            <td>$92,575</td>
-                        </tr>
-                        <tr>
-                            <td>Martena Mccray</td>
-                            <td>Post-Sales support</td>
-                            <td>Edinburgh</td>
-                            <td>46</td>
-                            <td>$324,050</td>
-                        </tr>
-                        <tr>
-                            <td>Jennifer Acosta</td>
-                            <td>Junior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>43</td>
-                            <td>$75,650</td>
-                        </tr>
-                        <tr>
-                            <td>Shad Decker</td>
-                            <td>Regional Director</td>
-                            <td>Edinburgh</td>
-                            <td>51</td>
-                            <td>$183,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
+        <div class="card-header kayit-kart">
+                        <h3 class="mt-3">Ödeme Yerleri</h3>
+                    </div>
+                    <div class="card-body tablo-head">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Firma İsmi</th>
+                                    <th scope="col">Ürün</th>
+                                    <th scope="col">Yetkili Adı</th>
+                                    <th scope="col">İban</th>
+                                    <th scope="col">Ödeme</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Ali Manav</td>
+                                    <td>Manav</td>
+                                    <td>Mustafa Yılmaz</td>
+                                    <td>-</td>
+                                    <td>Nakit</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Murat Tabak</td>
+                                    <td>Tabakçı</td>
+                                    <td>Arda Kural</td>
+                                    <td>TC0100000000000000000</td>
+                                    <td>Kart</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Veysel Elektrik</td>
+                                    <td>Elektrik</td>
+                                    <td>Ajda Kutay</td>
+                                    <td>TC0100000000000000000</td>
+                                    <td>Kart</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
         </div>
     </div>
     <!--Ödeme Liste Bitiş-->

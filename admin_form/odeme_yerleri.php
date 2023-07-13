@@ -26,7 +26,7 @@ if(empty($_SESSION['kul_eposta'])){
         <div class="col-8">
             <div class="card islemler">
                 <div class="card-header kayit-kart">
-                    <h3 class="mt-3">Ödeme Yeri Ekle/ Sil</h3>
+                    <h3 class="mt-3">Ödeme Yeri Ekle</h3>
                 </div>
                 <div class="card-body tablo-head">
                     <div class="row">
@@ -64,26 +64,26 @@ if(empty($_SESSION['kul_eposta'])){
         <div class="col-4">
             <div class="card islemler">
                 <div class="card-header kayit-kart">
-                    <h3 class="mt-3">Ödeme Yeri Ekle/ Sil</h3>
+                    <h3 class="mt-3">Ödeme Yeri Sil</h3>
                 </div>
                 <div class="card-body tablo-head">
                     <div class="row">
                         <form action="admin_islem.php">
                             <div class="form-row"> 
                                 <div class="row">
-                                    <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
+                                    <div class="mx-auto">
                                         <label class="">Firma Adı</label>
                                         <input type="text" class="input-border form-control" name="firma_yetkili_isim" placeholder="Ödemeyi Alan Kişi">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
+                                    <div class="mx-auto">
                                         <label class="">İban</label>
                                         <input type="text" class="input-border form-control" name="firma_iban" placeholder="Ödeme Yapılan İban">
                                     </div>
                                 </div>
                             </div>
-                            <button name="firma_ekle" type="submit" class="mt-3 btn kayit-in">Sil</button>
+                            <button name="firma_sil" type="submit" class="mt-3 btn kayit-in">Sil</button>
                         </form>
                     </div>  
                 </div>
