@@ -21,9 +21,9 @@
                         </ul>
                         <li class="mt-4"><h6 class="main-list text-light">Kasa Raporları</h6></li><hr class="main-list-hr">
                         <ul class="alt-liste">
-                            <li><a href="kasa_giris_cikis.php" class="link-offset-2 link-underline link-underline-opacity-0">- Rapor Al</a></li>
-                            <li><a href="kasa_odeme_listesi.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Listesi</a></li>
-                            <li><a href="kasa_rapor.php" class="link-offset-2 link-underline link-underline-opacity-0">- Giriş-Çıkış</a></li>
+                            <li><a href="kasa_rapor.php" class="link-offset-2 link-underline link-underline-opacity-0">- Rapor Al</a></li>
+                            <li><a href="kasa_odemeler.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Listesi</a></li>
+                            <li><a href="kasa_giris_cikis.php" class="link-offset-2 link-underline link-underline-opacity-0">- Giriş-Çıkış</a></li>
                         </ul>
                         <li class="mt-4"><h6 class="main-list text-light">Banka Raporları</h6></li><hr class="main-list-hr">
                         <ul class="alt-liste">
