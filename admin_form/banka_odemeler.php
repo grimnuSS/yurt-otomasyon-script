@@ -108,7 +108,7 @@ if(empty($_SESSION['kul_eposta'])){
                         <h3 class="mt-3">Ödeme Yerleri</h3>
                     </div>
                     <div class="card-body tablo-head">
-                        <table class="table table-hover col-sm-4 col-lg-12">
+                        <table class="table table-hover col-sm-4 col-lg-12" id="example" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>

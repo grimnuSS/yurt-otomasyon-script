@@ -29,7 +29,7 @@ if(empty($_SESSION['kul_eposta'])){
                     <h3 class="mt-3">Firma Ödeme Bilgileri</h3>
                 </div>
                 <div class="card-body tablo-head">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th scope="col"></th>

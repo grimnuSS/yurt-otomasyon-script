@@ -21,15 +21,15 @@ if(empty($_SESSION['kul_eposta'])){
 
     <!-- Ana İçerik -->
 
-<div class="col-lg-9 mx-md-5 mt-5 col-md-7 col-sm-10 mx-sm-auto">
+<div class="col-lg-9 mx-md-5 mt-5 col-md-7 col-sm-6 mx-sm-auto">
     <!--Öğrenci Kayıt Başlangıç-->
     <div class="container-fluid">
         <div class="card islemler">
             <div class="card-header kayit-kart">
                 <h3 class="mt-3">Öğrenci Listesi</h3>
                 <hr>
-                <div class="card-bodytablo-head">
-                    <table class="table table-hover table-responsive ">
+                <div class="card-body tablo-head">
+                    <table class="table table-hover table-responsive" id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th scope="col">İd</th>
