@@ -25,13 +25,13 @@
             'taksit_miktari' => $_POST['ogrenci_taksit_miktari'],
             'kayit_tarihi' => date("Y/m/d")
         ));
-        
-        if($ogrenciekle){
+        if ($ogrenciekle) {
             header("location: ogrenci_genel.php");
-        }else{
+        } else {
             echo 'Başarısız';
             exit;
         }
+
     }
 
     

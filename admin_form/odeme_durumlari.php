@@ -28,7 +28,7 @@ if(empty($_SESSION['kul_eposta'])){
                 <div class="card-header kayit-kart">
                     <h3 class="mt-3">Firma Ödeme Bilgileri</h3>
                 </div>
-                <div class="card-body tablo-head">
+                <div class="card-body tablo-head table-responsive">
                     <table class="table table-hover" id="example" class="display" style="width:100%">
                         <thead>
                             <tr>

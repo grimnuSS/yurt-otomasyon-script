@@ -23,12 +23,12 @@ if(empty($_SESSION['kul_eposta'])){
 <div class="col-lg-9 mx-md-5 mt-5 col-md-12 col-sm-10 mx-sm-auto">
     <div class="row mx-auto">
         <!-- İlk Tablo -->
-        <div class="col-lg-6 col-sm-12 col-md-10">
+    <div class="container-fluid mt-5 mb-5 col-lg-6 col-sm-12 col-md-10 mx-lg-auto mx-md-5">
             <div class="card islemler">
                 <div class="card-header kayit-kart">
                     <h3 class="mt-3">Gelir Raporları</h3>
                 </div>
-                <div class="card-body tablo-head">
+                <div class="card-body tablo-head table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -71,12 +71,12 @@ if(empty($_SESSION['kul_eposta'])){
             </div>
         </div>
         <!-- İkinci Tablo -->
-        <div class="col-lg-6 col-sm-12 col-md-10 mx-md-5 mx-lg-0">
+    <div class="container-fluid mt-5 mb-5 col-lg-6 col-sm-12 col-md-10 mx-lg-auto mx-md-5">
             <div class="card islemler">
                 <div class="card-header kayit-kart">
                     <h3 class="mt-3">Gider Raporları</h3>
                 </div>
-                <div class="card-body tablo-head">
+                <div class="card-body tablo-head table-responsive">
                     <table class="table table-hover w-auto">
                         <thead>
                             <tr>
@@ -127,7 +127,7 @@ if(empty($_SESSION['kul_eposta'])){
         <div class="card-header kayit-kart">
                         <h3 class="mt-3">Ödeme Yerleri</h3>
                     </div>
-                    <div class="card-body tablo-head">
+                    <div class="card-body tablo-head table-responsive">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
