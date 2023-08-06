@@ -31,16 +31,27 @@ textarea {
     /* Accordion Item */
     .sidebar-container .accordion-item {
         background-color: #0A2647;
+        cursor: pointer;
+        border-radius: 10px;
     }
 
     /* Accordion Item Hover */
     .sidebar-container .accordion-item:hover {
-        background-color: #2C74B3;
+        background-color: #1c466b;
+        transition: .5s;
+    }
+
+    .alt-liste a:hover{
+        padding: 1rem;
+        transition: .5s;
+        background-color: #0A2647;
     }
 
     /* Accordion Item Text */
     .sidebar-container .accordion-item h6 {
+        margin-top: 10px;
         color: #fff;
+        padding:  0.5rem 2rem;
     }
 
     .main-list-hr {
@@ -143,10 +154,28 @@ textarea {
     border-radius: 4px;
     box-sizing: border-box;
     border: 2px solid #0A2647;
+    
 }
 
 .input-border:focus{
     border: 2px solid #2C74B3;
+}
+
+.kart_main{
+    margin-top: 10px;
+    width: 20rem;
+    height: 10rem;
+    background-color: #0A2647;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #2C74B3;
+}
+
+.kart_main:hover{
+    background-color: #2C74B3;
+    color: #fff;
+    transition: .5s;
+    border-radius: 10px;
 }
 
 /* Footer Css */
