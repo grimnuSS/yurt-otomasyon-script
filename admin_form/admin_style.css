@@ -178,6 +178,27 @@ textarea {
     border-radius: 10px;
 }
 
+
+.kart_main_2{
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 35rem;
+    height: 20rem;
+    background-color: #0A2647;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #2C74B3;
+}
+.kart_main_3{
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 50rem;
+    height: 20rem;
+    background-color: #0A2647;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #2C74B3;
+}
 /* Footer Css */
 
 .footer {
