@@ -30,12 +30,12 @@ if(empty($_SESSION['kul_eposta'])){
                 </div>
                 <div class="card-body tablo-head">
                     <div class="row">
-                        <form action="admin_islem.php">
+                        <form action="admin_islem.php" method="POST">
                             <div class="form-row">
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-8 col-md-10 mx-auto col-">
                                         <label class="">Firma Adı</label>
-                                        <input type="text" class="input-border form-control" name="firma_ad" placeholder="Firma Adı Girin">
+                                        <input type="text" class="input-border form-control" name="firma_isim" placeholder="Firma Adı Girin">
                                     </div>
                                     <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
                                         <label class="">Ürün</label>
@@ -45,7 +45,7 @@ if(empty($_SESSION['kul_eposta'])){
                                 <div class="row mt-2">
                                     <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
                                         <label class="">Yetkili Adı</label>
-                                        <input type="text" class="input-border form-control" name="firma_yetkili_isim" placeholder="Ödemeyi Alan Kişi">
+                                        <input type="text" class="input-border form-control" name="firma_yetkili" placeholder="Ödemeyi Alan Kişi">
                                     </div>
                                     <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
                                         <label class="">İban</label>
@@ -55,9 +55,9 @@ if(empty($_SESSION['kul_eposta'])){
                                 <div class="row mt-2">
                                     <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
                                         <label class="">Ödeme Türü</label>
-                                        <select class="input-border form-select form-control" name="firma_odeme_tur">
-                                            <option class="" value="Tıp">Nakit</option>
-                                            <option class="" value="Mühendislik">Kredi/Banka</option>
+                                        <select class="input-border form-select form-control" name="firma_odeme_turu">
+                                            <option value="Nakit" selected>Nakit</option>
+                                            <option value="Kredi/Banka">Kredi/Banka</option>
                                         </select>
                                     </div>
                                     <div class="col-xl-6 mt-auto col-lg-8 col-md-10 mx-auto">
@@ -79,18 +79,12 @@ if(empty($_SESSION['kul_eposta'])){
                 </div>
                 <div class="card-body tablo-head">
                     <div class="row">
-                        <form action="admin_islem.php">
+                        <form action="admin_islem.php" method="POST">
                             <div class="form-row"> 
                                 <div class="row">
                                     <div class="mx-auto">
                                         <label class="">Firma Adı</label>
-                                        <input type="text" class="input-border form-control" name="firma_yetkili_isim" placeholder="Ödemeyi Alan Kişi">
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="mx-auto">
-                                        <label class="">İban</label>
-                                        <input type="text" class="input-border form-control" name="firma_iban" placeholder="Ödeme Yapılan İban">
+                                        <input type="text" class="input-border form-control" name="yerler_firma_isim" placeholder="Firmanın Adı">
                                     </div>
                                 </div>
                             </div>
@@ -108,42 +102,32 @@ if(empty($_SESSION['kul_eposta'])){
                         <h3 class="mt-3">Ödeme Yerleri</h3>
                     </div>
                     <div class="card-body tablo-head table-responsive">
-                        <table class="table table-hover col-sm-4 col-lg-12" id="example" class="display" style="width:100%">
+                        <table class="table table-hover col-sm-4 col-lg-12" id="example" class="display" style="font-size: 1rem;">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
-                                    <th scope="col">Firma İsmi</th>
-                                    <th scope="col">Ürün</th>
-                                    <th scope="col">Yetkili Adı</th>
+                                    <th scope="col">Firma Adı</th>
+                                    <th scope="col">Alınan Ürün</th>
                                     <th scope="col">İban</th>
-                                    <th scope="col">Ödeme</th>
+                                    <th scope="col">Ödeme Türü</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ali Manav</td>
-                                    <td>Manav</td>
-                                    <td>Mustafa Yılmaz</td>
-                                    <td>-</td>
-                                    <td>Nakit</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Murat Tabak</td>
-                                    <td>Tabakçı</td>
-                                    <td>Arda Kural</td>
-                                    <td>TC0100000000000000000</td>
-                                    <td>Kart</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Veysel Elektrik</td>
-                                    <td>Elektrik</td>
-                                    <td>Ajda Kutay</td>
-                                    <td>TC0100000000000000000</td>
-                                    <td>Kart</td>
-                                </tr>
+                                <?php
+                                    $sayi=0;
+                                    $odemesor=$db->prepare("SELECT * FROM odeme_yerler");
+                                    $odemesor->execute();
+                                    while($odemecek=$odemesor->fetch(PDO::FETCH_ASSOC)){
+                                        $sayi++;?>  
+                                    <tr>
+                                        <td><?php echo $sayi ?></td>
+                                        <td><?php echo $odemecek['yerler_firma_isim']?></td>
+                                        <td><?php echo $odemecek['yerler_firma_urun']?></td>
+                                        <td><?php echo $odemecek['yerler_firma_iban']?></td>
+                                        <td><?php echo $odemecek['yerler_odeme_turu']?></td>
+                                    </tr>
+                                    
+                                    <?php } ?>
                             </tbody>
                         </table>
                     </div>

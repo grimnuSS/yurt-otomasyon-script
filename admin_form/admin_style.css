@@ -28,16 +28,13 @@ textarea {
 
 /* Sidebar Css */
 
-    /* Accordion Item */
     .sidebar-container .accordion-item {
         background-color: #0A2647;
         cursor: pointer;
         border-radius: 10px;
     }
 
-    /* Accordion Item Hover */
     .sidebar-container .accordion-item:hover {
-        background-color: #1c466b;
         transition: .5s;
     }
 
@@ -47,7 +44,6 @@ textarea {
         background-color: #0A2647;
     }
 
-    /* Accordion Item Text */
     .sidebar-container .accordion-item h6 {
         margin-top: 10px;
         color: #fff;
@@ -120,10 +116,6 @@ textarea {
     color: #0A2647;
 }
 
-.kayit-kart label{
-    color: #0A2647;
-}
-
 .kayit-in{
     text-align: center;
     font-size: large;
@@ -178,7 +170,6 @@ textarea {
     border-radius: 10px;
 }
 
-
 .kart_main_2{
     padding: 1.5rem;
     margin-top: 10px;
@@ -189,6 +180,81 @@ textarea {
     color: #fff;
     border: 1px solid #2C74B3;
 }
+
+.kart_2{
+    margin-top: 10px;
+    width: 20rem;
+    height: 10rem;
+    background-color: #2C74B3;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #0A2647;
+}
+
+.kart_2:hover{
+    background-color: #0A2647;
+    color: #fff;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+.weather-sunny{
+    background-image: url("img/sunny.jpg");
+    background-size: 80%;
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 35rem;
+    height: 20rem;
+    border-radius: 10px;
+    color: #0A2647;
+    border: 1px solid #2C74B3;
+}
+.weather-sunny h5,
+.weather-sunny h4{
+    color: #F94C10;
+    background-color: #F8DE22;
+    border-radius: 1rem;
+    width: 16rem;
+}
+
+.weather-snowy{
+    background-image: url("img/snowy.jpg");
+    background-size: 80%;
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 35rem;
+    height: 20rem;
+    border-radius: 10px;
+    color: #0A2647;
+    border: 1px solid #2C74B3;
+}
+.weather-snowy h5,
+.weather-snowy h4{
+    color: #F1F0E8;
+    background-color: #ADC4CE;
+    border-radius: 1rem;
+    width: 16rem;
+}
+
+.weather-rainy{
+    background-image: url("img/rainy.jpg");
+    background-size: 80%;
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 35rem;
+    height: 20rem;
+    border-radius: 10px;
+    color: #0A2647;
+    border: 1px solid #2C74B3;
+}
+.weather-rainy h5,
+.weather-rainy h4{
+    color: #22A699;
+    background-color: #F29727;
+    border-radius: 1rem;
+    width: 16rem;
+}
+
 .kart_main_3{
     padding: 1.5rem;
     margin-top: 10px;

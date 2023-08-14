@@ -21,7 +21,7 @@ if (isset($_POST['oturum_ac'])) {
         exit;
     }else{
         $_SESSION['kul_eposta'] = $_POST['kul_eposta'];
-        header("location:../admin_form/ogrenci_genel.php");
+        header("location:../admin_form/anasayfa.php");
     }
 }
 

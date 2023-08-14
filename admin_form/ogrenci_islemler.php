@@ -111,29 +111,8 @@ if(empty($_SESSION['kul_eposta'])){
                             </div>
                         </div>   
                     </div>
-                    <button name="ogrenci_sil" type="submit" class="mt-3 btn kayit-in" onClick="kayit_sil(event)">Kayıt Sil</button>
+                    <button name="ogrenci_sil" type="submit" class="mt-3 btn kayit-in">Kayıt Sil</button>
                 </form>
-                <script>
-                    function kayit_sil(event) {
-                        event.preventDefault(); // Formun otomatik olarak submit olmasını engellemek için.
-                        Swal.fire({
-                            title: 'Öğrenci Kaydını Sil',
-                            text: 'Öğrenci kaydını silmek istediğinize emin misiniz?',
-                            icon: 'warning',
-                            showCancelButton: true,
-                            confirmButtonText: 'Evet, sil!',
-                            cancelButtonText: 'Hayır, vazgeç!',
-                            confirmButtonColor: '#d33',
-                            cancelButtonColor: '#3085d6',
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                // Eğer "Evet, sil!" butonuna tıklanırsa, formu submit ederek admin_islem.php'ye yönlendirelim.
-                                const form = event.target.closest('form');
-                                form.submit();
-                            }
-                        });
-                    }
-                </script>
                 </div>
             </div>
         </div>

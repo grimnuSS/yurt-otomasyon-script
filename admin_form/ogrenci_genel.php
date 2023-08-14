@@ -29,7 +29,7 @@ if(empty($_SESSION['kul_eposta'])){
                 <h3 class="mt-3">Öğrenci Listesi</h3>
                 <hr>
                 <div class="card-body tablo-head table-responsive">
-                    <table class="table table-hover table-responsive" id="example" class="display" style="width:100%;">
+                    <table class="table table-hover table-responsive" id="example" class="display" style="font-size: 1rem;">
                         <thead>
                             <tr>
                                 <th scope="col">İd</th>

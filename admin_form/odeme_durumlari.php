@@ -29,54 +29,38 @@ if(empty($_SESSION['kul_eposta'])){
                     <h3 class="mt-3">Firma Ödeme Bilgileri</h3>
                 </div>
                 <div class="card-body tablo-head table-responsive">
-                    <table class="table table-hover" id="example" class="display" style="width:100%">
-                        <thead>
+                    <table class="table table-hover" id="example" class="display" style="font-size: 1rem;">
+                    <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Firma İsmi</th>
-                                <th scope="col">Ürün</th>
-                                <th scope="col">Ödenen</th>
-                                <th scope="col">Kalan</th>
-                                <th scope="col">Toplam Borç</th>
-                                <th scope="col">Başlanan/Hedeflenen Ödeme Tarihi</th>
-                                <th scope="col">Ödeme Durumu</th>
+                                <th scope="col">Firma Adı</th>
+                                <th scope="col">Ödeme Miktarı</th>
+                                <th scope="col">Ödeme Başlangıç</th>
+                                <th scope="col">Ödeme Bitiş</th>
+                                <th scope="col">Ödenen Para</th>
+                                <th scope="col">Kalan Borç</th>
                                 <th scope="col">Alacak/Verecek</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Ali Manav</td>
-                                <td>Manav</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>10.01.2023/21.07.2023</td>
-                                <td class="text-danger">Yapılmadı</td>
-                                <td class="text-danger">Borç</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Murat Tabak</td>
-                                <td>Kırtasiye</td>
-                                <td>5000TL</td>
-                                <td>5000TL</td>
-                                <td>10000TL</td>
-                                <td>10.01.2023/21.07.2023</td>
-                                <td class="text-danger">Yapılmadı</td>
-                                <td class="text-success">Alacak</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Veysel Elektrik</td>
-                                <td>Elektrik</td>
-                                <td>25300TL</td>
-                                <td>25300TL</td>
-                                <td>50600TL</td>
-                                <td>10.01.2023/21.07.2023</td>
-                                <td class="text-success">Yapıldı</td>
-                                <td class="text-danger">Borç</td>
-                            </tr>
+                            <?php
+                                $sayi=0;
+                                $odemesor=$db->prepare("SELECT * FROM odeme_kategori");
+                                $odemesor->execute();
+                                while($odemecek=$odemesor->fetch(PDO::FETCH_ASSOC)){
+                                    $sayi++;?>  
+                                <tr>
+                                    <td><?php echo $sayi ?></td>
+                                    <td><?php echo $odemecek['odeme_firma_adi']?></td>
+                                    <td><?php echo $odemecek['odeme_miktar']?></td>
+                                    <td><?php echo $odemecek['odeme_baslangic']?></td>
+                                    <td><?php echo $odemecek['odeme_bitis']?></td>
+                                    <td><?php echo $odemecek['odeme_odenen']?></td>
+                                    <td><?php echo $odemecek['odeme_kalan']?></td>
+                                    <td><?php echo $odemecek['odeme_durumu']?></td>
+                                </tr>
+                                
+                                <?php } ?>
                         </tbody>
                     </table>
                 </div>

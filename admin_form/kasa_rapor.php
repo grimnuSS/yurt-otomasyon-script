@@ -57,7 +57,7 @@ if(empty($_SESSION['kul_eposta'])){
                         <h3 class="mt-3">Raporlar</h3>
                     </div>
                     <div class="card-body tablo-head table-responsive">
-                        <table class="display nowrap" id="example" class="display" style="width:100%">
+                        <table class="display nowrap" id="example" class="display" style="font-size: 1rem;">
                             <thead>
                                 <tr>
                                     <th>Name</th>

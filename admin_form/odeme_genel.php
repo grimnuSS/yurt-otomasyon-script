@@ -30,41 +30,35 @@ if(empty($_SESSION['kul_eposta'])){
                 </div>
                 <div class="card-body tablo-head table-responsive">
                     <table class="table table-hover">
-                        <thead>
+                    <thead>
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col">Firma Adı</th>
-                                <th scope="col">Miktar</th>
-                                <th scope="col">Başlangıç/Bitiş</th>
-                                <th scope="col">Ödenen</th>
-                                <th scope="col">Kalan</th>
+                                <th scope="col">Ödeme Miktarı</th>
+                                <th scope="col">Ödeme Başlangıç</th>
+                                <th scope="col">Ödeme Bitiş</th>
+                                <th scope="col">Ödenen Para</th>
+                                <th scope="col">Kalan Borç</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Murat Bilgisayar</td>
-                                <td>10000 TL</td>
-                                <td>12.02.2022/12.02.2023</td>
-                                <td>5000 TL</td>
-                                <td>5000 TL</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Ali Manav</td>
-                                <td>20000 TL</td>
-                                <td>15.04.2021/11.02.2025</td>
-                                <td>5000 TL</td>
-                                <td>15000 TL</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Zeynep Ticaret</td>
-                                <td>50000 TL</td>
-                                <td>24.02.2021/24.04.2024</td>
-                                <td>5000 TL</td>
-                                <td>45000 TL</td>
-                            </tr>
+                            <?php
+                                $sayi=0;
+                                $odemesor=$db->prepare("SELECT * FROM odeme_kategori WHERE odeme_durumu = 'Alınacak'");
+                                $odemesor->execute();
+                                while($odemecek=$odemesor->fetch(PDO::FETCH_ASSOC)){
+                                    $sayi++;?>  
+                                <tr>
+                                    <td><?php echo $sayi ?></td>
+                                    <td><?php echo $odemecek['odeme_firma_adi']?></td>
+                                    <td><?php echo $odemecek['odeme_miktar']?></td>
+                                    <td><?php echo $odemecek['odeme_baslangic']?></td>
+                                    <td><?php echo $odemecek['odeme_bitis']?></td>
+                                    <td><?php echo $odemecek['odeme_odenen']?></td>
+                                    <td><?php echo $odemecek['odeme_kalan']?></td>
+                                </tr>
+                                
+                                <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -77,42 +71,36 @@ if(empty($_SESSION['kul_eposta'])){
                     <h3 class="mt-3">Gider Raporları</h3>
                 </div>
                 <div class="card-body tablo-head table-responsive">
-                    <table class="table table-hover w-auto">
-                        <thead>
+                    <table class="table table-hover w-auto" style="font-size: 1rem;">
+                    <thead>
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col">Firma Adı</th>
-                                <th scope="col">Miktar</th>
-                                <th scope="col">Başlangıç/Bitiş</th>
-                                <th scope="col">Ödenen</th>
-                                <th scope="col">Kalan</th>
+                                <th scope="col">Ödeme Miktarı</th>
+                                <th scope="col">Ödeme Başlangıç</th>
+                                <th scope="col">Ödeme Bitiş</th>
+                                <th scope="col">Ödenen Para</th>
+                                <th scope="col">Kalan Borç</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Murat Bilgisayar</td>
-                                <td>10000 TL</td>
-                                <td>12.02.2022/12.02.2023</td>
-                                <td>5000 TL</td>
-                                <td>5000 TL</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Ali Manav</td>
-                                <td>20000 TL</td>
-                                <td>15.04.2021/11.02.2025</td>
-                                <td>5000 TL</td>
-                                <td>15000 TL</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Zeynep Ticaret</td>
-                                <td>50000 TL</td>
-                                <td>24.02.2021/24.04.2024</td>
-                                <td>5000 TL</td>
-                                <td>45000 TL</td>
-                            </tr>
+                            <?php
+                                $sayi=0;
+                                $odemesor=$db->prepare("SELECT * FROM odeme_kategori WHERE odeme_durumu = 'Verilecek'");
+                                $odemesor->execute();
+                                while($odemecek=$odemesor->fetch(PDO::FETCH_ASSOC)){
+                                    $sayi++;?>  
+                                <tr>
+                                    <td><?php echo $sayi ?></td>
+                                    <td><?php echo $odemecek['odeme_firma_adi']?></td>
+                                    <td><?php echo $odemecek['odeme_miktar']?></td>
+                                    <td><?php echo $odemecek['odeme_baslangic']?></td>
+                                    <td><?php echo $odemecek['odeme_bitis']?></td>
+                                    <td><?php echo $odemecek['odeme_odenen']?></td>
+                                    <td><?php echo $odemecek['odeme_kalan']?></td>
+                                </tr>
+                                
+                                <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -129,42 +117,32 @@ if(empty($_SESSION['kul_eposta'])){
                     </div>
                     <div class="card-body tablo-head table-responsive">
                         <table class="table table-hover">
-                            <thead>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Firma Adı</th>
+                                <th scope="col">Alınan Ürün</th>
+                                <th scope="col">İban</th>
+                                <th scope="col">Ödeme Türü</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $sayi=0;
+                                $odemesor=$db->prepare("SELECT * FROM odeme_yerler");
+                                $odemesor->execute();
+                                while($odemecek=$odemesor->fetch(PDO::FETCH_ASSOC)){
+                                    $sayi++;?>  
                                 <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Firma İsmi</th>
-                                    <th scope="col">Ürün</th>
-                                    <th scope="col">Yetkili Adı</th>
-                                    <th scope="col">İban</th>
-                                    <th scope="col">Ödeme</th>
+                                    <td><?php echo $sayi ?></td>
+                                    <td><?php echo $odemecek['yerler_firma_isim']?></td>
+                                    <td><?php echo $odemecek['yerler_firma_urun']?></td>
+                                    <td><?php echo $odemecek['yerler_firma_iban']?></td>
+                                    <td><?php echo $odemecek['yerler_odeme_turu']?></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ali Manav</td>
-                                    <td>Manav</td>
-                                    <td>Mustafa Yılmaz</td>
-                                    <td>-</td>
-                                    <td>Nakit</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Murat Tabak</td>
-                                    <td>Tabakçı</td>
-                                    <td>Arda Kural</td>
-                                    <td>TC0100000000000000000</td>
-                                    <td>Kart</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Veysel Elektrik</td>
-                                    <td>Elektrik</td>
-                                    <td>Ajda Kutay</td>
-                                    <td>TC0100000000000000000</td>
-                                    <td>Kart</td>
-                                </tr>
-                            </tbody>
+                                
+                                <?php } ?>
+                        </tbody>
                         </table>
                     </div>
         </div>

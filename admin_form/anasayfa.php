@@ -42,10 +42,22 @@ if ($err) {
   $data = json_decode($response, true);
 
   $item = $data['result'][0];
-  $description = $item['description'];
   $degree = (int) $item['degree'];
   $day = $item['day'];
+  $durum = $item['status'];
 }
+
+if ($durum == "Clear" || $durum == "Clouds"){
+    $description = "Açık";
+    $weather = "sunny";
+}elseif($durum == "Rainy"){
+    $description = "Yağmurlu";
+    $weather = "rainy";
+}elseif($durum == "Snowy"){
+    $description = "Karlı";
+    $weather = "snowy";
+}
+
 
 ?>
 
@@ -65,7 +77,7 @@ if ($err) {
                 <h4 class="mt-4">&nbsp;1 Aylık Gelir/Gider</h4><br>
                 <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-cash-stack text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;1000 TL</p>
             </div>
-            <div class="col-3 container-fluid kart_main mt-xl-1 mt-lg-5 mt-md-5">
+            <div class="col-3 container-fluid kart_2 mt-xl-1 mt-lg-5 mt-md-5">
                 <h4 class="mt-4">&nbsp;Kayıtlı Öğrenci</h4><br>
                 <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-person-circle text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;1000 TL</p>
             </div>
@@ -73,15 +85,15 @@ if ($err) {
                 <h4 class="mt-4">&nbsp;Toplam Gider</h4><br>
                 <p style="font-size:1.25rem">&nbsp;<i class="bi bi-cash-stack text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;1000 TL</p>
             </div>
-            <div class="col-3 container-fluid kart_main mt-xl-1 mt-lg-5 mt-md-5">
+            <div class="col-3 container-fluid kart_2 mt-xl-1 mt-lg-5 mt-md-5">
                 <h4 class="mt-4">&nbsp;Dolar/Euro</h4>
                 <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-currency-dollar text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $JSON['USD']['satis']; ?></p>
                 <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-currency-euro text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $JSON['EUR']['satis']; ?></p>
             </div>
         </div>
         <div class="row mx-auto">
-            <div class="col-lg-4 container-fluid mt-0 mt-lg-5 col-md-10 kart_main_2">
-                <h4>Hava Durumu</h4><br><br>
+            <div class="col-lg-4 container-fluid mt-0 mt-lg-5 col-md-10 weather-<?php echo $weather; ?>">
+                <h4>&nbsp;&nbsp;&nbsp;Hava Durumu</h4><br>
                 <?php
                     echo "<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$day</h5>";
                     echo "<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hava Durumu: $description</h5>";
