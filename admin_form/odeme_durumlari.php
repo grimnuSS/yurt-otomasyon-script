@@ -26,7 +26,7 @@ if(empty($_SESSION['kul_eposta'])){
         <div class="mt-5">
             <div class="card islemler">
                 <div class="card-header kayit-kart">
-                    <h3 class="mt-3">Firma Ödeme Bilgileri</h3>
+                    <h3 class="mt-3">Ödeme Defteri</h3>
                 </div>
                 <div class="card-body tablo-head table-responsive">
                     <table class="table table-hover" id="example" class="display" style="font-size: 1rem;">
@@ -39,7 +39,6 @@ if(empty($_SESSION['kul_eposta'])){
                                 <th scope="col">Ödeme Bitiş</th>
                                 <th scope="col">Ödenen Para</th>
                                 <th scope="col">Kalan Borç</th>
-                                <th scope="col">Alacak/Verecek</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,7 +56,6 @@ if(empty($_SESSION['kul_eposta'])){
                                     <td><?php echo $odemecek['odeme_bitis']?></td>
                                     <td><?php echo $odemecek['odeme_odenen']?></td>
                                     <td><?php echo $odemecek['odeme_kalan']?></td>
-                                    <td><?php echo $odemecek['odeme_durumu']?></td>
                                 </tr>
                                 
                                 <?php } ?>
