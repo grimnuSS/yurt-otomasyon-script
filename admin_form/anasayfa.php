@@ -14,7 +14,7 @@ $JSON = json_decode(file_get_contents('https://api.genelpara.com/embed/doviz.jso
 
 ?>
 <?php
-
+//Doviz Api
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -36,6 +36,7 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
+//Hava Durumu Api
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
@@ -56,8 +57,43 @@ if ($durum == "Clear" || $durum == "Clouds"){
 }elseif($durum == "Snowy"){
     $description = "Karlı";
     $weather = "snowy";
+}else{
+    $description = "Güneşli";
+    $weather = "sunny";
 }
 
+//Anasayfa Aylık Kazanç
+
+$oneMonthAgo = date("Y-m-d", strtotime("-1 month"));
+
+$query = "SELECT SUM(ogrenci_son_odenen_miktar) as ogr_toplam FROM ogrenci_kategori WHERE ogrenci_son_yapilan_odeme >= :oneMonthAgo";
+$statement = $db->prepare($query);
+$statement->bindParam(':oneMonthAgo', $oneMonthAgo, PDO::PARAM_STR);
+$statement->execute();
+
+$result = $statement->fetch(PDO::FETCH_ASSOC);
+
+$aylik_ogrenci = $result['ogr_toplam'];
+
+
+//Anasayfa Kayıtlı Öğrenci
+$kaynak = "SELECT COUNT(*) as ogr_sayi FROM ogrenci_kategori"; 
+$durum = $db->prepare($kaynak);
+$durum->execute();
+
+$sonuc = $durum->fetch(PDO::FETCH_ASSOC);
+
+$ogrenci_sayisi = $sonuc['ogr_sayi']; 
+
+//Anasayfa Aylık Gider
+
+$sunucu = "SELECT SUM(odeme_kalan) as odeme_toplam FROM odeme_kategori";
+$durum_2 = $db->prepare($sunucu);
+$durum_2->execute();
+
+$sonuc_2 = $durum_2->fetch(PDO::FETCH_ASSOC);
+
+$aylik_odeme = $sonuc_2['odeme_toplam'];
 
 ?>
 
@@ -74,16 +110,16 @@ if ($durum == "Clear" || $durum == "Clouds"){
     <div class="col-lg-9 mx-md-5 mt-4 col-md-7 col-sm-10 mx-sm-auto">
         <div class="row mx-auto">
             <div class="col-3 container-fluid kart_main mt-xl-1 mt-lg-5 mt-md-5">
-                <h4 class="mt-4">&nbsp;1 Aylık Gelir/Gider</h4><br>
-                <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-cash-stack text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;1000 TL</p>
+                <h4 class="mt-4">&nbsp;Kayıtlı Öğrenci</h4><br>
+                <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-person-circle text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $ogrenci_sayisi, " Kişi"; ?></p>
             </div>
             <div class="col-3 container-fluid kart_2 mt-xl-1 mt-lg-5 mt-md-5">
-                <h4 class="mt-4">&nbsp;Kayıtlı Öğrenci</h4><br>
-                <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-person-circle text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;1000 TL</p>
+                <h4 class="mt-4">&nbsp;Aylık Gelir</h4><br>
+                <p style="font-size:1.25rem">&nbsp;&nbsp;<i class="bi bi-cash-stack text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $aylik_ogrenci, " ₺"; ?></p>
             </div>
             <div class="col-3 container-fluid kart_main mt-xl-1 mt-lg-5 mt-md-5">
-                <h4 class="mt-4">&nbsp;Toplam Gider</h4><br>
-                <p style="font-size:1.25rem">&nbsp;<i class="bi bi-cash-stack text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;1000 TL</p>
+                <h4 class="mt-4">&nbsp;Toplam Borç</h4><br>
+                <p style="font-size:1.25rem">&nbsp;<i class="bi bi-cash-stack text-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $aylik_odeme, " ₺"; ?></p>
             </div>
             <div class="col-3 container-fluid kart_2 mt-xl-1 mt-lg-5 mt-md-5">
                 <h4 class="mt-4">&nbsp;Dolar/Euro</h4>

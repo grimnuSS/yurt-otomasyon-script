@@ -198,6 +198,17 @@ textarea {
     border-radius: 10px;
 }
 
+.kart_main_rapor{
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 28rem;
+    height: 25rem;
+    background-color: #0A2647;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #2C74B3;
+}
+
 .weather-sunny{
     background-image: url("img/sunny.jpg");
     background-size: 80%;

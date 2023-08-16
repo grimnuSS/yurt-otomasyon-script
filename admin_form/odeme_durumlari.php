@@ -34,9 +34,9 @@ if(empty($_SESSION['kul_eposta'])){
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col">Firma Adı</th>
-                                <th scope="col">Ödeme Miktarı</th>
                                 <th scope="col">Ödeme Başlangıç</th>
                                 <th scope="col">Ödeme Bitiş</th>
+                                <th scope="col">Ödeme Miktarı</th>
                                 <th scope="col">Ödenen Para</th>
                                 <th scope="col">Kalan Borç</th>
                             </tr>
@@ -51,9 +51,9 @@ if(empty($_SESSION['kul_eposta'])){
                                 <tr>
                                     <td><?php echo $sayi ?></td>
                                     <td><?php echo $odemecek['odeme_firma_adi']?></td>
-                                    <td><?php echo $odemecek['odeme_miktar']?></td>
                                     <td><?php echo $odemecek['odeme_baslangic']?></td>
                                     <td><?php echo $odemecek['odeme_bitis']?></td>
+                                    <td><?php echo $odemecek['odeme_miktar']?></td>
                                     <td><?php echo $odemecek['odeme_odenen']?></td>
                                     <td><?php echo $odemecek['odeme_kalan']?></td>
                                 </tr>

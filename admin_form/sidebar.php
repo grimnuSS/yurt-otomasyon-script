@@ -14,7 +14,7 @@
                         <ul class="alt-liste">
                             <li><a href="ogrenci_genel.php" class="link-offset-2 link-underline link-underline-opacity-0">- Genel Profil</a></li>
                             <li><a href="ogrenci_islemler.php" class="link-offset-2 link-underline link-underline-opacity-0">- Kayıt İşlemleri</a></li>
-                            <li><a href="ogrenci_odeme.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Ekle</a></li>
+                            <li><a href="ogrenci_odeme.php" class="link-offset-2 link-underline link-underline-opacity-0">- Taksit Kaydı Ekle</a></li>
                         </ul>
                     </div>
                 </div>
@@ -25,9 +25,9 @@
                     <hr class="main-list-hr">
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
                         <ul class="alt-liste">
-                            <li><a href="odeme_durumlari.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Durumları</a></li>
-                            <li><a href="odeme_yerleri.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Yerleri</a></li>
-                            <li><a href="giris_cikis.php" class="link-offset-2 link-underline link-underline-opacity-0">- Giriş Çıkış Ekle</a></li>
+                            <li><a href="odeme_durumlari.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Listesi</a></li>
+                            <li><a href="odeme_yerleri.php" class="link-offset-2 link-underline link-underline-opacity-0">- Kayıt Oluştur</a></li>
+                            <li><a href="giris_cikis.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Ekle</a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,8 +38,8 @@
                     <hr class="main-list-hr">
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
                         <ul class="alt-liste">
-                            <li><a href="kasa_rapor.php" class="link-offset-2 link-underline link-underline-opacity-0">- Kasa Raporu Al</a></li>
-                            <li><a href="banka_rapor.php" class="link-offset-2 link-underline link-underline-opacity-0">- Banka Raporu Al</a></li>
+                            <li><a href="ogrenci_rapor.php" class="link-offset-2 link-underline link-underline-opacity-0">- Öğrenci Raporları</a></li>
+                            <li><a href="odeme_rapor.php" class="link-offset-2 link-underline link-underline-opacity-0">- Ödeme Raporları</a></li>
                         </ul>
                     </div>
                 </div>

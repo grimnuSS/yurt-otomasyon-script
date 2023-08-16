@@ -43,13 +43,17 @@ if(empty($_SESSION['kul_eposta'])){
                                     </div>
                                 </div>                            
                                 <div class="row mt-2">
-                                    <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
+                                    <div class="col-xl-4 col-lg-6 col-md-10 mx-auto">
                                         <label class="">Yetkili Adı</label>
                                         <input type="text" class="input-border form-control" name="odeme_firma_yetkili" placeholder="Ödemeyi Alan Kişi">
                                     </div>
-                                    <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
+                                    <div class="col-xl-4 col-lg-6 col-md-10 mx-auto">
                                         <label class="">İban</label>
                                         <input type="text" class="input-border form-control" name="odeme_iban" placeholder="Ödeme Yapılan İban">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-10 col-md-10 mx-auto">
+                                        <label class="">Miktar</label>
+                                        <input type="text" class="input-border form-control" name="odeme_miktar" placeholder="Ödeme Yapılacak Miktar">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
