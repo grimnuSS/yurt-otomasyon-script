@@ -63,8 +63,10 @@
 
     if(isset($_POST['firma_ekle'])){
         try {
-            $firmaekle = $db->prepare("INSERT INTO odeme_kategori (odeme_firma_adi, odeme_firma_yetkili, odeme_urun, odeme_iban, odeme_turu, odeme_miktar, odeme_kalan, odeme_alacak_verecek) VALUES (:odeme_firma_adi, :odeme_firma_yetkili, :odeme_urun, :odeme_iban, :odeme_turu, :odeme_miktar, :odeme_kalan, :odeme_alacak_verecek)");
-    
+            $firmaekle = $db->prepare("INSERT INTO odeme_kategori (odeme_firma_adi, odeme_firma_yetkili, odeme_urun, odeme_iban, odeme_turu, odeme_miktar, odeme_kalan, odeme_alacak_verecek, odeme_baslangic)
+            VALUES (:odeme_firma_adi, :odeme_firma_yetkili, :odeme_urun, :odeme_iban, :odeme_turu, :odeme_miktar, :odeme_kalan, :odeme_alacak_verecek, :bas_tarih)
+            ");
+            $bas_tarih = date("Y/m/d");
             $firmaekle->execute(array(
                 'odeme_firma_adi' => $_POST['odeme_firma_adi'],
                 'odeme_firma_yetkili' => $_POST['odeme_firma_yetkili'],
@@ -73,7 +75,8 @@
                 'odeme_turu' => $_POST['odeme_turu'],
                 'odeme_miktar' => $_POST['odeme_miktar'],
                 'odeme_kalan' => $_POST['odeme_miktar'],
-                'odeme_alacak_verecek' => $_POST['odeme_alacak_verecek']
+                'odeme_alacak_verecek' => $_POST['odeme_alacak_verecek'],
+                'bas_tarih' => $bas_tarih
             ));
     
             if ($firmaekle) {
@@ -180,6 +183,60 @@
             } else {
                 echo 'Başarısız';
                 exit;
+            }
+        } catch (PDOException $e) {
+            echo "Hata: " . $e->getMessage();
+        }
+    }
+
+
+    if (isset($_POST['sifre_degis'])) {
+        session_start();
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $newPassword = $_POST['new_password'];
+        $newPasswordRepeat = $_POST['new_password_r'];
+    
+        try {
+            // Kullanıcının eski şifresini veritabanında doğrulayın
+            $query = "SELECT kul_id, kul_sifre FROM login_panel WHERE kul_eposta = :email";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if ($row) {
+                $oldPasswordFromDB = $row['kul_sifre'];
+    
+                // Eğer eski şifre doğru ise, yeni şifreleri kontrol edin ve güncelleyin
+                if ($password === $oldPasswordFromDB) {
+                    if ($newPassword === $newPasswordRepeat) {
+                        $userId = $row['kul_id'];
+                        
+                        $updateQuery = "UPDATE login_panel SET kul_sifre = :newPassword WHERE kul_id = :userId";
+                        $stmt = $db->prepare($updateQuery);
+                        $stmt->bindParam(':newPassword', $newPassword);
+                        $stmt->bindParam(':userId', $userId);
+                        
+                        if ($stmt->execute()) {
+                            if(isset($_SESSION['kul_eposta'])){
+                                session_destroy();
+                                unset($_SESSION['kul_eposta']);
+                                $_SESSION['cikis_yapildi'] = "Oturum Kapatıldı. Yeniden Giriş Yapmanız Gerek.";
+                                header("location: ayarlar.php");
+                                exit;
+                            }
+                        } else {
+                            header("location: ayarlar.php");
+                        }
+                    } else {
+                        header("location: ayarlar.php");
+                    }
+                } else {
+                    header("location: ayarlar.php");
+                }
+            } else {
+                header("location: ayarlar.php");
             }
         } catch (PDOException $e) {
             echo "Hata: " . $e->getMessage();

@@ -181,6 +181,17 @@ textarea {
     border: 1px solid #2C74B3;
 }
 
+.kart_main_ogr_2{
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 35rem;
+    height: 25rem;
+    background-color: #0A2647;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #2C74B3;
+}
+
 .kart_2{
     margin-top: 10px;
     width: 20rem;
@@ -201,7 +212,18 @@ textarea {
 .kart_main_rapor{
     padding: 1.5rem;
     margin-top: 10px;
-    width: 28rem;
+    width: 42rem;
+    height: 25rem;
+    background-color: #0A2647;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #2C74B3;
+}
+
+.kart_main_rapor_2{
+    padding: 1.5rem;
+    margin-top: 10px;
+    width: 50rem;
     height: 25rem;
     background-color: #0A2647;
     border-radius: 10px;
@@ -222,8 +244,8 @@ textarea {
 }
 .weather-sunny h5,
 .weather-sunny h4{
-    color: #F94C10;
-    background-color: #F8DE22;
+    color: #fff;
+    background-color: #2C74B3;
     border-radius: 1rem;
     width: 16rem;
 }
@@ -241,8 +263,8 @@ textarea {
 }
 .weather-snowy h5,
 .weather-snowy h4{
-    color: #F1F0E8;
-    background-color: #ADC4CE;
+    color: #fff;
+    background-color: #2C74B3;
     border-radius: 1rem;
     width: 16rem;
 }
@@ -260,8 +282,8 @@ textarea {
 }
 .weather-rainy h5,
 .weather-rainy h4{
-    color: #22A699;
-    background-color: #F29727;
+    color: #fff;
+    background-color: #2C74B3;
     border-radius: 1rem;
     width: 16rem;
 }

@@ -59,7 +59,7 @@ if ($durum == "Clear" || $durum == "Clouds"){
     $weather = "snowy";
 }else{
     $description = "Güneşli";
-    $weather = "sunny";
+    $weather = "snowy";
 }
 
 //Anasayfa Aylık Kazanç

@@ -34,7 +34,7 @@
 
                 <!-- Raporlar -->
                 <div class="accordion-item">
-                    <h6 class="main-list text-light" style="font-size:1.15rem;" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Rapor İşlemleri</h6>
+                    <h6 class="main-list text-light" style="font-size:1.15rem;" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Rapor Görüntüle</h6>
                     <hr class="main-list-hr">
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
                         <ul class="alt-liste">
@@ -50,9 +50,8 @@
                     <hr class="main-list-hr">
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordion">
                         <ul class="alt-liste">
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Genel Ayarlar</a></li>
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Kullanıcı İşlemleri</a></li>
-                            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-0">- Destek Al</a></li>
+                            <li><a href="ayarlar.php" class="link-offset-2 link-underline link-underline-opacity-0">- Genel Ayarlar</a></li>
+                            <li><a href="destek_al.php" class="link-offset-2 link-underline link-underline-opacity-0">- Destek Al</a></li>
                         </ul>
                     </div>
                 </div>
