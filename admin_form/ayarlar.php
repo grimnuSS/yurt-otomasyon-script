@@ -39,11 +39,11 @@ if(empty($_SESSION['kul_eposta'])){
                         </div>
                         <div class="form-group">
                             <label for="new_password">Yeni Şifreniz</label>
-                            <input type="password" class="form-control" style="background-color:#2C74B3;; color: #fff;" id="new_password" name="new_password" required>
+                            <input type="password" class="form-control" style="background-color:#2C74B3;; color: #fff;" id="new_password" name="new_password" required minlength=8>
                         </div>
                         <div class="form-group">
                             <label for="new_password_r">Yeni Şifreniz Tekrar</label>
-                            <input type="password" class="form-control" style="background-color:#2C74B3;; color: #fff;" id="new_password_r" name="new_password_r" required>
+                            <input type="password" class="form-control" style="background-color:#2C74B3;; color: #fff;" id="new_password_r" name="new_password_r" required minlength=8>
                         </div>
                         <button type="submit" style="background-color:#0A2647; color: #fff; border-color: #fff;" class="btn mt-2" name="sifre_degis">Kaydet</button>
                     </form>

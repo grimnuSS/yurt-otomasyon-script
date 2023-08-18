@@ -28,6 +28,21 @@
             'kayit_tarihi' => date("Y/m/d")
         ));
         if ($ogrenciekle) {
+            ob_start();
+            session_start();
+            $log_eposta = $_SESSION['kul_eposta'];
+            $log_tarih = date("Y/m/d H:i:s");
+            $log_kategori = "Öğrenci İşlemleri"; 
+            $log_islem = "Yeni öğrenci eklendi; " . $_POST['ogrenci_ad'];
+
+            $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+            $log_ekle->execute(array(
+                'kategori' => $log_kategori,
+                'islem' => $log_islem,
+                'tarih' => $log_tarih,
+                'eposta' => $log_eposta
+            ));
+
             header("location: ogrenci_genel.php");
         } else {
             echo 'Başarısız';
@@ -53,6 +68,21 @@
         ));
 
         if ($ogrencisil) {
+            ob_start();
+            session_start();
+            $log_eposta = $_SESSION['kul_eposta'];
+            $log_tarih = date("Y/m/d H:i:s");
+            $log_kategori = "Öğrenci İşlemleri"; 
+            $log_islem = "Bir Öğrenci Silindi; " . $ad;
+
+            $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+            $log_ekle->execute(array(
+                'kategori' => $log_kategori,
+                'islem' => $log_islem,
+                'tarih' => $log_tarih,
+                'eposta' => $log_eposta
+            ));
+
             header("location: ogrenci_genel.php");
         } else {
             echo 'Başarısız';
@@ -80,6 +110,21 @@
             ));
     
             if ($firmaekle) {
+                ob_start();
+                session_start();
+                $log_eposta = $_SESSION['kul_eposta'];
+                $log_tarih = date("Y/m/d H:i:s");
+                $log_kategori = "Ödeme İşlemleri"; 
+                $log_islem = "Ödeme Kaydı Eklendi; " . $_POST['odeme_firma_adi'];
+
+                $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+                $log_ekle->execute(array(
+                    'kategori' => $log_kategori,
+                    'islem' => $log_islem,
+                    'tarih' => $log_tarih,
+                    'eposta' => $log_eposta
+                ));
+
                 header("location: odeme_yerleri.php");
             } else {
                 echo 'Başarısız';
@@ -99,6 +144,20 @@
         ));
         
         if($firmasil){
+            ob_start();
+            session_start();
+            $log_eposta = $_SESSION['kul_eposta'];
+            $log_tarih = date("Y/m/d H:i:s");
+            $log_kategori = "Ödeme İşlemleri"; 
+            $log_islem = "Ödeme Kaydı Silindi; " . $_POST['odeme_firma_adi'];
+
+            $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+            $log_ekle->execute(array(
+                'kategori' => $log_kategori,
+                'islem' => $log_islem,
+                'tarih' => $log_tarih,
+                'eposta' => $log_eposta
+            ));
             header("location: odeme_yerleri.php");
         }else{
             echo 'Başarısız';
@@ -135,6 +194,20 @@
             $ogr_odeme_ekle->execute();
     
             if ($ogr_odeme_ekle) {
+                ob_start();
+                session_start();
+                $log_eposta = $_SESSION['kul_eposta'];
+                $log_tarih = date("Y/m/d H:i:s");
+                $log_kategori = "Öğrenci İşlemleri"; 
+                $log_islem = "Öğrenci Ödeme Kaydı Eklendi; " . $_POST['ogrenci_ad'] . " " . $_POST['ogrenci_odenen_miktar'];
+
+                $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+                $log_ekle->execute(array(
+                    'kategori' => $log_kategori,
+                    'islem' => $log_islem,
+                    'tarih' => $log_tarih,
+                    'eposta' => $log_eposta
+                ));
                 header("location: ogrenci_genel.php");
                 exit;
             } else {
@@ -178,6 +251,20 @@
             $update_odeme->execute();
     
             if ($update_odeme) {
+                ob_start();
+                session_start();
+                $log_eposta = $_SESSION['kul_eposta'];
+                $log_tarih = date("Y/m/d H:i:s");
+                $log_kategori = "Öğrenci İşlemleri"; 
+                $log_islem = "Ödeme Kaydı Eklendi; " . $_POST['odeme_firma_adi'] . " " . $_POST['odeme_odenen'];
+
+                $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+                $log_ekle->execute(array(
+                    'kategori' => $log_kategori,
+                    'islem' => $log_islem,
+                    'tarih' => $log_tarih,
+                    'eposta' => $log_eposta
+                ));
                 header("location: odeme_durumlari.php");
                 exit;
             } else {
@@ -220,6 +307,20 @@
                         
                         if ($stmt->execute()) {
                             if(isset($_SESSION['kul_eposta'])){
+                                ob_start();
+                                session_start();
+                                $log_eposta = $_SESSION['kul_eposta'];
+                                $log_tarih = date("Y/m/d H:i:s");
+                                $log_kategori = "Oturum İşlemleri"; 
+                                $log_islem = "Şifre Değiştirildi";
+                
+                                $log_ekle = $db->prepare("INSERT INTO log_db (log_kategori, log_islem, log_tarih, log_kullanici_email) VALUES (:kategori, :islem, :tarih, :eposta)");
+                                $log_ekle->execute(array(
+                                    'kategori' => $log_kategori,
+                                    'islem' => $log_islem,
+                                    'tarih' => $log_tarih,
+                                    'eposta' => $log_eposta
+                                ));
                                 session_destroy();
                                 unset($_SESSION['kul_eposta']);
                                 $_SESSION['cikis_yapildi'] = "Oturum Kapatıldı. Yeniden Giriş Yapmanız Gerek.";

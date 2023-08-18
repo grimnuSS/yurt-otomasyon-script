@@ -120,7 +120,7 @@ if(empty($_SESSION['kul_eposta'])){
                         <h3 class="mt-3">Firmalar</h3>
                     </div>
                     <div class="card-body tablo-head table-responsive">
-                        <table class="table table-hover col-sm-4 col-lg-12" id="example" class="display" style="font-size: 1rem;">
+                        <table class="table table-hover col-sm-4 col-lg-12" id="odeme_yerler" class="display" style="font-size: 1rem;">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>

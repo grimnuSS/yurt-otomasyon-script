@@ -129,23 +129,44 @@ $aylik_odeme = $sonuc_2['odeme_toplam'];
         </div>
         <div class="row mx-auto">
             <div class="col-lg-4 container-fluid mt-0 mt-lg-5 col-md-10 weather-<?php echo $weather; ?>">
-                <h4>&nbsp;&nbsp;&nbsp;Hava Durumu</h4><br>
+                <h4 class="mt-5 mx-auto">&nbsp;&nbsp;&nbsp;Hava Durumu</h4><br>
                 <?php
-                    echo "<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$day</h5>";
-                    echo "<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hava Durumu: $description</h5>";
-                    echo "<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derece: $degree</h5>";
+                    echo '<h5 class="mx-auto mt-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .$day. '</h5>';
+                    echo '<h5 class="mx-auto mt-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hava Durumu:' .$description. '</h5>';
+                    echo '<h5 class="mx-auto mt-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derece:' .$degree. '</h5>';
                 ?>
             </div>
             <div class="col-lg-8 container-fluid mt-0 mt-lg-5 col-md-10 kart_main_3 mt-lg-0 mt-sm-5">
                 <h4>Son İşlemler</h4>
-            </div>
-        </div>
-        <div class="row mx-auto">
-            <div class="col-lg-8 container-fluid mt-0 mt-lg-5 col-md-10 kart_main_3">
-                <h4>Öğrenci Listesi</h4>
-            </div>
-            <div class="col-lg-4 container-fluid mt-0 mt-lg-5 col-md-10 kart_main_2 mt-lg-0 mt-sm-5">
-                <h4>Aylık Ödeme İşlemleri</h4>
+                <table class="table table-hover table-responsive" id="islem" class="display" style="font-size: 1rem;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">İşlem</th>
+                                <th scope="col">Kullanıcı</th>
+                                <th scope="col">Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $sayi = 0;
+
+                                $ogrencisor = $db->prepare("SELECT * FROM log_db");
+                                $ogrencisor->execute();
+
+                                while ($ogrencicek = $ogrencisor->fetch(PDO::FETCH_ASSOC)) {
+                                    $sayi++; ?>
+                                    <tr>
+                                        <td><?php echo $sayi ?></td>
+                                        <td><?php echo $ogrencicek['log_kategori'] ?></td>
+                                        <td><?php echo $ogrencicek['log_islem'] ?></td>
+                                        <td><?php echo $ogrencicek['log_kullanici_email'] ?></td>
+                                        <td><?php echo $ogrencicek['log_tarih'] ?></td>
+                                    </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

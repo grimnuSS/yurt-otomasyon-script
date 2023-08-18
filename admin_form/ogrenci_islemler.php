@@ -101,24 +101,39 @@ if(empty($_SESSION['kul_eposta'])){
                 <form action="admin_islem.php" method="POST">
                     <div class="form-row">
                         <div class="row">
-                            <div class="col-xl-10 col-lg-8 col-md-10 mx-auto">
-                                <label class="">Öğrenci Ad/TC</label>
-                                <select class="input-border form-select form-control" name="ogrenci_ad_tc" required>
-                                    <?php
-                                    $odemesor = $db->prepare("SELECT ogrenci_ad, ogrenci_tc FROM ogrenci_kategori");
-                                    $odemesor->execute();
-                                    while ($odemecek = $odemesor->fetch(PDO::FETCH_ASSOC)) { ?>
-                                        <option value="<?php echo $odemecek['ogrenci_ad'] . ' - ' . $odemecek['ogrenci_tc']; ?>">
-                                            <?php echo $odemecek['ogrenci_ad'] . " - " . $odemecek['ogrenci_tc']; ?>
-                                        </option>
-                                    <?php } ?>
-                                </select>
+                            <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
+                                <label class="">Öğrenci Adı Soyadı</label>
+                                <input type="text" class="input-border form-control" name="ogrenci_ad" placeholder="Öğrenci Adı Soyadı Girin" required>
                             </div>
-                        </div>
+                            <div class="col-xl-6 col-lg-8 col-md-10 mx-auto">
+                                <label class="">T.C Numarası</label>
+                                <input type="text" class="input-border form-control" name="ogrenci_tc" placeholder="Öğrenci TC No'sunu Girin" minlength="11" required>
+                            </div>
+                        </div>   
                     </div>
-                    <button name="ogrenci_sil" type="submit" class="mt-3 btn kayit-in">Kayıt Sil</button>
+                    <button name="ogrenci_sil" type="submit" class="mt-3 btn kayit-in" onClick="kayit_sil(event)">Kayıt Sil</button>
                 </form>
-
+                <script>
+                    function kayit_sil(event) {
+                        event.preventDefault(); // Formun otomatik olarak submit olmasını engellemek için.
+                        Swal.fire({
+                            title: 'Öğrenci Kaydını Sil',
+                            text: 'Öğrenci kaydını silmek istediğinize emin misiniz?',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Evet, sil!',
+                            cancelButtonText: 'Hayır, vazgeç!',
+                            confirmButtonColor: '#d33',
+                            cancelButtonColor: '#3085d6',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Eğer "Evet, sil!" butonuna tıklanırsa, formu submit ederek admin_islem.php'ye yönlendirelim.
+                                const form = event.target.closest('form');
+                                form.submit();
+                            }
+                        });
+                    }
+                </script>
                 </div>
             </div>
         </div>
